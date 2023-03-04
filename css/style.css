@@ -1,0 +1,385 @@
+/* Importing inter font style */
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
+body{
+    margin: 0px;
+}
+
+/* Container style for entire webpage */
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+/* style for the static part of the web page */
+.staticHeader{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: #111111;
+    padding: 20px;
+}
+
+/* Style for new post button */
+#newPostBtn{
+    border: 1px solid #FFFFFF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #E3E3E3;
+    outline: none;
+    background-color: #111111;
+    width: 200px;
+    height: 40px;   
+}
+
+/* Styles for the dynamic part of the page */
+.dynamicPart{
+    background-color: #1E1E1E;
+    flex: 1 auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    overflow: auto;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.dynamicPart::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+
+/* Font stylings for the entire page */
+/* This text style will be common for the entire web page text including the post's text and the button text*/
+.textStyle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #E3E3E3;
+}
+
+
+/* This heading style will be common for the headings of the posts as well as static heading "Blogging website" */
+.headingStyle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 42px;
+    color: #FFFFFF;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/* Styles for the post elements that will be added dynamically using the Javascript */
+.post{
+    border: 1px solid #FFFFFF;
+    background-color: #1E1E1E;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.postControls{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.postBtnStyle{
+    border: 1px solid #FFFFFF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #E3E3E3;
+    outline: none;
+    background-color: #1E1E1E;
+    width: 200px;
+    height: 40px;  
+}
+
+.removeButton{
+    flex: 1 auto;
+}
+
+.postDetailsStyle{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #808080;
+    margin: auto;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/* Adding the modal styles */
+/* Styling the create a post modal */
+
+.createModal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.createModalContent{
+    background-color: #E3E3E3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 20%;
+    left: 8.5%;
+    width: 75%;
+    height: 60%;
+    padding: 25px 40px;
+    gap: 20px;
+}
+
+.postheadText{
+    flex: 0.05 auto;
+}
+
+.postheadText input{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333333;
+    box-sizing: border-box;
+    background-color: #E3E3E3;
+}
+
+.postheadText input:focus{
+    border: 1px solid #333333;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #333333;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #E3E3E3;
+}
+
+.postheadText input:read-write {
+    border: 1px solid #333333;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #333333;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #E3E3E3;
+}
+
+.postText{
+    flex: 0.95 auto;
+}
+
+.postText textarea{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: 1px solid #333333;
+    box-sizing: border-box;
+    background-color: #E3E3E3;
+}
+
+.postText textarea:focus{
+    border: 1px solid #333333;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #333333;
+    outline: none;
+    padding: 10px;
+    background-color: #E3E3E3;
+}
+
+.postText textarea:read-write {
+    border: 1px solid #333333;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #333333;
+    outline: none;
+    padding: 10px;
+    background-color: #E3E3E3;
+}
+
+.postButtons{
+    display: flex;
+    gap: 20px;
+}
+
+.createModalHeading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.material-icons{
+    margin-top: 10px;
+}
+
+.material-icons:hover{
+    cursor: pointer;
+    color: rgb(195, 185, 38);
+    font-size: 26px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/* Styling the edit modal */
+.editModal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.editModalContent{
+    background-color: #E3E3E3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 20%;
+    left: 8.5%;
+    width: 75%;
+    height: 60%;
+    padding: 25px 40px;
+    gap: 20px;
+}
+
+.editModalHeading{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/* Font styles required for modal */
+.modalHeading{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 42px;
+    color: #333333;
+}
+
+.modalButtons{
+    border: 1px solid #333333;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 29px;
+    color: #333333;
+    outline: none;
+    background-color: #E3E3E3;
+    width: 200px;
+    height: 40px;  
+}
+
+#newPostBtn:hover, .postBtnStyle:hover, .modalButtons:hover{
+    cursor: pointer;
+    border: 2px solid rgb(195, 185, 38) ;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 800px) {
+    .staticHeader{
+        flex-direction: column;
+        gap: 7.5px;
+    }  
+
+    .dynamicPart{
+        padding: 12px;
+    }
+
+    .postControls{
+        flex-direction: column;
+        gap: 7.5px;
+    }
+
+    .post{
+        padding: 7.5px;
+        border: none;
+        box-shadow: 0px 0px 3px 1px #ffffff;
+    }
+
+    .postDetailsStyle{
+        margin: 0px;
+        font-size: 0.8rem;
+    }
+
+    .postBtnStyle{
+        width: 100%;
+    }
+
+    .createModalContent, .editModalContent{
+        top: 15%;
+        left: 5%;
+        width: 90%;
+        height: 70%;
+        box-sizing: border-box;
+        padding: 7.5px;
+        gap: 7.5px;
+    }
+
+    .postButtons{
+        flex-direction: column;
+        gap: 7.5px;
+    }
+
+    .modalButtons{
+        width: 100%;
+    }
+}
+
+/* This style is given for the galaxy fold devices */
+@media screen and (max-width: 300px) {
+    .staticHeader{
+        flex-direction: column;
+        gap: 7.5px;
+    } 
+
+    .headingStyle, .modalHeading{
+        font-size: 1.7rem;
+    }
+
+    #newPostBtn, .textStyle{
+        font-size: 0.8rem;
+    }
+
+    /* .material-icons{
+        display: none;
+    } */
+    
+} 

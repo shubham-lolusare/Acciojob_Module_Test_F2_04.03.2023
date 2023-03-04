@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogging Website</title>
+    <!-- Adding the google icon stylesheet -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Adding the CSS file -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Adding the Favicon -->
+    <link rel="shortcut icon" href="./images/icon.jpg" type="icon/jpg" />
+
+    <!-- Adding the JSS file -->
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Writing the static part of the website -->
+      <div class="staticHeader">
+        <div class="headingStyle">Blogging Website</div>
+        <div>
+          <input type="button" id="newPostBtn" value="Create New Post" />
+        </div>
+      </div>
+
+      <!-- Creating the div for dynamic part. We will display all the blogs in this div-->
+      <div class="dynamicPart">
+        <!-- 
+          This will be the template div for the blog posts that will be added dynamically.
+
+          <div class="post">
+            <div class="headingStyle">Heading</div>
+            <div class="textStyle">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa
+              ad distinctio sed ea. Est nisi atque deleniti dignissimos molestiae.
+            </div>
+            <div class="postControls">
+              <div>
+                <input type="button" />
+              </div>
+              <div class="removeButton">
+                <input type="button" />
+              </div>
+              <div class="postDetailsStyle">
+                Created at 03/03/2023 at 11:50 PM
+              </div>
+            </div>
+          </div> 
+        -->
+      </div>
+    </div>
+
+    <!-- 
+      We will implement two modals. 
+      One for creating new post and other for editing the 
+      existnig post
+    -->
+
+    <!-- Modal for creating new post. No Bootstrap class is implemented -->
+    <div class="createModal">
+      <!-- 
+        The modal consits of three sections
+        The heading part, the form or input part and the submission part
+      -->
+      <div class="createModalContent">
+        <!-- This is the heading part -->
+        <div class="createModalHeading">
+          <div class="modalHeading">Create A Post</div>
+          <div>
+            <i class="material-icons" id="closeModal">close</i>
+          </div>
+        </div>
+
+        <!-- 
+          This is the input part
+          Note that form attribute is used to assing the form 
+          action to the input elements 
+        -->
+        <div class="postheadText">
+          <input
+            type="text"
+            name="createPostHeading"
+            id="createPostHeading"
+            form="postForm"
+            placeholder="Enter Your Heading..."
+            required
+          />
+        </div>
+        <div class="postText">
+          <textarea
+            name="createPostContent"
+            id="createPostContent"
+            form="postForm"
+            placeholder="Enter Your Blog Post..."
+            required
+          ></textarea>
+        </div>
+
+        <!-- 
+          This is the submission sectio where submission 
+          and cancellation buttons are given 
+        -->
+        <div class="postButtons">
+          <div>
+            <input
+              type="submit"
+              class="modalButtons"
+              value="Publish Post"
+              form="postForm"
+              id="pblshPost"
+            />
+          </div>
+          <div>
+            <input
+              type="button"
+              class="modalButtons"
+              value="Cancel Post"
+              id="cnclPst"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <form id="postForm" onsubmit="post_content(event)"></form>
+
+    <!-- 
+      Modal for editing the existing post. No Bootstrap class is implemented
+      As explained above modal for editing post is defined in the same way as above 
+      only with the difference that no form attribute is used as there is no need
+    -->
+    <div class="editModal">
+      <div class="editModalContent">
+        <div class="editModalHeading">
+          <div class="modalHeading">Edit A Post</div>
+          <div>
+            <i class="material-icons" id="closeModal">close</i>
+          </div>
+        </div>
+
+        <div class="postheadText">
+          <input type="text" name="postHeading" id="postHeading" />
+        </div>
+        <div class="postText">
+          <textarea name="postContent" id="postContent"></textarea>
+        </div>
+
+        <div class="postButtons">
+          <div>
+            <input
+              type="submit"
+              class="modalButtons"
+              value="Save Post"
+              id="savePost"
+            />
+          </div>
+          <div>
+            <input
+              type="button"
+              class="modalButtons"
+              value="Delete Post"
+              id="delPost"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
