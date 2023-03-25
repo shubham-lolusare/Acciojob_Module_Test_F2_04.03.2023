@@ -1,5 +1,6 @@
 # Acciojob_Module_Test_F2_04.03.2023
 - Develop a simple blogging website with a user interface (UI) as shown in the Figma link. The website should allow users to create, edit, and delete blog posts.
+- Deployed link: https://shubham-lolusare.github.io/Acciojob_Module_Test_F2_04.03.2023/
 - Figma Link: https://www.figma.com/file/0XTN5vVszisgjoj9fXw3at/Blogging-Website?node-id=0%3A1&t=ffykZJydX7vZyeqz-1
 
 # Requirements:
